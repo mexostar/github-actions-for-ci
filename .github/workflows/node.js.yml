@@ -3,6 +3,17 @@ name: Node CI
 on: [push]
 
 jobs:
+  labelWhenApproved:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: pullreminders/label-when-approved-action@v1
+      - name: add label when approved
+        env:
+          APPROVALS: "1"
+          GITHUB_TOKEN: "drfgsdg"
+          ADD_LABEL: "Quorum approved"
   build:
 
     runs-on: ubuntu-latest
